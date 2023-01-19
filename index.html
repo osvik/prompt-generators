@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midjourney</title>
+    <script src="./alpinejs.min.js" defer></script>
+    <style>
+        .prompt {
+            margin: 1rem 0 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Midjourney</h1>
+
+    <div id="composer" x-data="{ 
+        url: '',
+        description: '',
+        iw: '',
+        no:'', 
+        version: '', 
+        aspectratio:'',
+        stylize: '',
+        seed: '',
+        quality: ''
+    }">
+
+        <div class="prompt">
+            <code>
+<span x-show="url"><span x-text="url"></span></span>
+<span x-show="description"><span x-text="description"></span></span>
+<span x-show="iw && url">--iw <span x-text="iw"></span></span>
+<span x-show="no">--no <span x-text="no"></span></span>
+<span x-show="version">--v <span x-text="version"></span></span>
+<span x-show="aspectratio">--ar <span x-text="aspectratio"></span></span>
+<span x-show="stylize">--s <span x-text="stylize"></span></span>
+<span x-show="seed">--seed <span x-text="seed"></span></span>
+<span x-show="quality">--q <span x-text="quality"></span></span>
+            </code>
+        </div>
+
+        <div>
+            <label for="url">.jpg or .png URL:</label>
+            <input type="url" x-model="url" id="url" />
+        </div>
+        <div x-show="url">
+            <label for="iw">IW:</label>
+            <input type="range" id="iw" min="-1" max="1" step="0.05" x-model="iw">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" x-model="description" id="description" />
+        </div>
+        <div>
+            <label for="no">No:</label>
+            <input type="text" x-model="no" id="no" />
+        </div>
+
+        <div>
+            <label for="version">Version:</label>
+            <select x-model="version" id="version">
+                <option value=""></option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>
+        </div>
+        <div>
+            <label for="aspectratio">Aspect ratio:</label>
+            <select x-model="aspectratio" id="aspectratio">
+                <option value="">1:1</option>
+                <option value="2:3">2:3</option>
+                <option value="3:2">3:2</option>
+            </select>
+        </div>
+        <div>
+            <label for="seed">Seed:</label>
+            <input type="range" id="seed" min="0" max="4294967295" x-model="seed">
+        </div>
+        <div>
+            <label for="stylize">Stylize:</label>
+            <select x-model="stylize" id="stylize">
+                <option value="">500 - Default</option>
+                <option value="0">0</option>
+                <option value="1000">1000</option>
+            </select>
+        </div>
+        <div>
+            <label for="quality">Quality:</label>
+            <select x-model="quality" id="quality">
+                <option value="">1 - Default</option>
+                <option value="0.25">0.25</option>
+                <option value="0.5">0.5</option>
+                <option value="2">2</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
