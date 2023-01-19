@@ -45,7 +45,6 @@
             <code>
 <span x-show="url"><span x-text="url"></span></span>
 <span x-show="description"><span x-text="description"></span></span>
-<span x-show="iw && url">--iw <span x-text="iw"></span></span>
 <span x-show="no">--no <span x-text="no"></span></span>
 <span x-show="version">--v <span x-text="version"></span></span>
 <span x-show="aspectratio">--ar <span x-text="aspectratio"></span></span>
@@ -59,10 +58,6 @@
         <div>
             <label for="url">.jpg or .png URL:</label>
             <input type="url" x-model="url" id="url" />
-        </div>
-        <div x-show="url">
-            <label for="iw">IW:</label>
-            <input type="range" id="iw" min="-1" max="1" step="0.05" x-model="iw">
         </div>
         <div>
             <label for="description">Description:</label>
