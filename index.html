@@ -12,6 +12,12 @@
             margin: 1rem 0 1rem 0;
         }
 
+        li {
+            cursor: pointer;
+            text-decoration: underline;
+            color: cornflowerblue;
+        }
+
         code {
             background-color: gold;
             padding: 0.5rem;
@@ -45,8 +51,13 @@
         stylize: '',
         seed: '',
         chaos: '',
-        quality: ''
+        quality: '',
+        add(text){
+            this.description = this.description + ', ' + text;
+        }
     }">
+
+        <h2>Prompt</h2>
 
         <div class="prompt">
             <code>
@@ -63,6 +74,8 @@
             </code>
         </div>
 
+        <h2>1. Content</h2>
+
         <div>
             <label for="url">.jpg or .png URL:</label>
             <input type="url" x-model="url" id="url" />
@@ -75,6 +88,14 @@
             <label for="no">Negative description:</label>
             <input type="text" x-model="no" id="no" spellcheck="true" />
         </div>
+
+        <h2>2. Style</h2>
+
+        <ul>
+            <li x-on:click="add($el.innerText)">looney tunes style</li>
+        </ul>
+
+        <h2>3. Settings</h2>
 
         <div>
             <label for="version">Version:</label>
