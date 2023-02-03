@@ -35,6 +35,7 @@
         iw: '',
         no:'', 
         version: '', 
+        style: '', 
         aspectratio:'',
         stylize: '',
         seed: '',
@@ -48,6 +49,7 @@
 <span x-show="description"><span x-text="description"></span></span>
 <span x-show="no">--no <span x-text="no"></span></span>
 <span x-show="version">--v <span x-text="version"></span></span>
+<span x-show="style">--style <span x-text="style"></span></span>
 <span x-show="aspectratio">--ar <span x-text="aspectratio"></span></span>
 <span x-show="stylize">--s <span x-text="stylize"></span></span>
 <span x-show="seed">--seed <span x-text="seed"></span></span>
@@ -73,9 +75,18 @@
             <label for="version">Version:</label>
             <select x-model="version" id="version">
                 <option value=""></option>
+                <option value="4">4</option>
                 <option value="3">3</option>
                 <option value="2">2</option>
                 <option value="1">1</option>
+            </select>
+        </div>
+        <div x-show="version == '4'">
+            <label for="style">Style:</label>
+            <select x-model="style" id="style">
+                <option value=""></option>
+                <option value="4a">4a</option>
+                <option value="4b">4b</option>
             </select>
         </div>
         <div>
