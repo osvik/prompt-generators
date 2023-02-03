@@ -54,6 +54,9 @@
         quality: '',
         add(text){
             this.description = this.description + ', ' + text;
+        },
+        updateVersion(){
+            console.log('Changed version');
         }
     }">
 
@@ -93,13 +96,14 @@
 
         <ul>
             <li x-on:click="add($el.innerText)">looney tunes style</li>
+            <li x-on:click="add($el.innerText)">high quality photo, 8K</li>
         </ul>
 
         <h2>3. Settings</h2>
 
         <div>
             <label for="version">Version:</label>
-            <select x-model="version" id="version">
+            <select x-model="version" id="version" x-on:change="updateVersion()">
                 <option value=""></option>
                 <option value="4">4</option>
                 <option value="3">3</option>
