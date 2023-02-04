@@ -29,7 +29,8 @@
             bottom: 0;
         }
 
-        #description {
+        #description,
+        #mystyles {
             width: 80%;
             padding: 5px;
         }
@@ -43,6 +44,7 @@
     <div id="composer" x-data="{ 
         url: '',
         description: '',
+        mystyles: '',
         iw: '',
         no:'', 
         version: '', 
@@ -53,7 +55,7 @@
         chaos: '',
         quality: '',
         add(text){
-            this.description = this.description + ', ' + text;
+            this.mystyles = this.mystyles + text + ', ';
         },
         updateVersion(){
             console.log('Changed version');
@@ -66,6 +68,7 @@
             <code>
 <span x-show="url"><span x-text="url"></span></span>
 <span x-show="description"><span x-text="description"></span></span>
+<span x-show="mystyles"><span x-text="mystyles"></span></span>
 <span x-show="no">--no <span x-text="no"></span></span>
 <span x-show="version">--v <span x-text="version"></span></span>
 <span x-show="style">--style <span x-text="style"></span></span>
@@ -88,6 +91,10 @@
             <input type="text" x-model="description" id="description" spellcheck="true" />
         </div>
         <div>
+            <label for="mystyles">My styles:</label>
+            <input type="text" x-model="mystyles" id="mystyles" spellcheck="true" />
+        </div>
+        <div>
             <label for="no">Negative description:</label>
             <input type="text" x-model="no" id="no" spellcheck="true" />
         </div>
@@ -96,7 +103,8 @@
 
         <ul>
             <li x-on:click="add($el.innerText)">looney tunes style</li>
-            <li x-on:click="add($el.innerText)">high quality photo, 8K</li>
+            <li x-on:click="add($el.innerText)">high quality photo</li>
+            <li x-on:click="add($el.innerText)">8K</li>
         </ul>
 
         <h2>3. Settings</h2>
