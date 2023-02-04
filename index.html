@@ -45,6 +45,7 @@
         url: '',
         description: '',
         mystyles: '',
+        styletype: '',
         iw: '',
         no:'', 
         version: '', 
@@ -103,8 +104,14 @@
 
         <ul>
             <li x-on:click="add($el.innerText)">looney tunes style</li>
-            <li x-on:click="add($el.innerText)">high quality photo</li>
+            <li x-on:click="add($el.innerText); styletype='photo'">high quality photo</li>
             <li x-on:click="add($el.innerText)">8K</li>
+        </ul>
+
+        <ul x-show="styletype=='photo'">
+            <li x-on:click="add($el.innerText)">35mm lens</li>
+            <li x-on:click="add($el.innerText)">50mm lens</li>
+            <li x-on:click="add($el.innerText)">100mm lens</li>
         </ul>
 
         <h2>3. Settings</h2>
