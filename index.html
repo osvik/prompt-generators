@@ -24,15 +24,14 @@
             line-height: 1.5rem;
         }
 
-        footer {
-            position: fixed;
-            bottom: 0;
-        }
-
         #description,
         #mystyles {
             width: 80%;
             padding: 5px;
+        }
+
+        #composer {
+            margin-bottom: 100px;
         }
     </style>
 </head>
@@ -106,6 +105,17 @@
             <li x-on:click="add($el.innerText)">looney tunes style</li>
             <li x-on:click="add($el.innerText); styletype='photo'">high quality photo</li>
             <li x-on:click="add($el.innerText)">8K</li>
+        </ul>
+
+        <p>Types of Shots: https://www.careersinfilm.com/types-of-shots-in-film/</p>
+        <ul>
+            <li x-on:click="add($el.innerText)">Extreme wide shot</li>
+            <li x-on:click="add($el.innerText)">Wide shot</li>
+            <li x-on:click="add($el.innerText)">Full shot</li>
+            <li x-on:click="add($el.innerText)">Medium shot</li>
+            <li x-on:click="add($el.innerText)">Close-up shot</li>
+            <li x-on:click="add($el.innerText)">Medium close-up shot</li>
+            <li x-on:click="add($el.innerText)">Extreme close-up Shot</li>
         </ul>
 
         <ul x-show="styletype=='photo'">
