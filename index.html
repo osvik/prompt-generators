@@ -78,11 +78,16 @@
         <h3>Styles</h3>
 
         <ul class="add">
-            <li x-on:click="add($el.innerText, 2)">looney tunes style</li>
-            <li x-on:click="add($el.innerText, 2)">cartoon</li>
+            <li x-on:click="add($el.innerText, 2); styletype='cartoon'">cartoon</li>
             <li x-on:click="add($el.innerText, 2); styletype='photo'">high quality photo</li>
         </ul>
 
+        <div x-show="styletype=='cartoon'">
+            <h4>Cartoon specific</h4>
+            <ul class="add">
+                <li x-on:click="add($el.innerText, 2)">looney tunes style</li>
+            </ul>
+        </div>
         <div x-show="styletype=='photo'">
             <h4>Photo specific</h4>
             <ul class="add">
@@ -118,6 +123,7 @@
             </sup>
         </h3>
         <ul class="add">
+            <li x-on:click="add($el.innerText)">landscape</li>
             <li x-on:click="add($el.innerText)">extreme wide shot</li>
             <li x-on:click="add($el.innerText)">wide shot</li>
             <li x-on:click="add($el.innerText)">full shot</li>
