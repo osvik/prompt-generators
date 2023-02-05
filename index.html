@@ -55,7 +55,7 @@
         chaos: '',
         quality: '',
         add(text){
-            this.mystyles = this.mystyles + text + ', ';
+            this.mystyles = this.mystyles + text + ':: ';
         },
         updateVersion(){
             console.log('Changed version');
@@ -67,7 +67,7 @@
         <div class="prompt">
             <code>
 <span x-show="url"><span x-text="url"></span></span>
-<span x-show="description"><span x-text="description"></span></span>
+<span x-show="description"><span x-text="description"></span><span x-show="mystyles">::5</span></span>
 <span x-show="mystyles"><span x-text="mystyles"></span></span>
 <span x-show="no">--no <span x-text="no"></span></span>
 <span x-show="version">--v <span x-text="version"></span></span>
@@ -103,6 +103,7 @@
 
         <ul>
             <li x-on:click="add($el.innerText)">looney tunes style</li>
+            <li x-on:click="add($el.innerText)">cartoon</li>
             <li x-on:click="add($el.innerText); styletype='photo'">high quality photo</li>
             <li x-on:click="add($el.innerText)">8K</li>
         </ul>
