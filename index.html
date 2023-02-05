@@ -28,8 +28,8 @@
         seed: '',
         chaos: '',
         quality: '',
-        add(text){
-            this.mystyles = this.mystyles + text + '::1 ';
+        add(text, weight=1){
+            this.mystyles = this.mystyles + text + '::' + weight + ' ';
         },
         updateVersion(){
             console.log('Changed version');
@@ -78,10 +78,9 @@
         <h3>Styles</h3>
 
         <ul class="add">
-            <li x-on:click="add($el.innerText)">looney tunes style</li>
-            <li x-on:click="add($el.innerText)">cartoon</li>
-            <li x-on:click="add($el.innerText); styletype='photo'">high quality photo</li>
-            <li x-on:click="add($el.innerText)">8K</li>
+            <li x-on:click="add($el.innerText, 2)">looney tunes style</li>
+            <li x-on:click="add($el.innerText, 2)">cartoon</li>
+            <li x-on:click="add($el.innerText, 2); styletype='photo'">high quality photo</li>
         </ul>
 
         <div x-show="styletype=='photo'">
@@ -96,6 +95,7 @@
                 <li x-on:click="add($el.innerText)">sharp-focus</li>
                 <li x-on:click="add($el.innerText)">ISO 100</li>
                 <li x-on:click="add($el.innerText)">ISO 3200</li>
+                <li x-on:click="add($el.innerText)">8K</li>
             </ul>
             <ul class="add">
                 <li x-on:click="add($el.innerText)">soft light</li>
