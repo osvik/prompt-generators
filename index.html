@@ -5,35 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midjourney</title>
+    <title>Midjourney prompt builder</title>
     <script src="./alpinejs.min.js" defer></script>
-    <style>
-        .prompt {
-            margin: 1rem 0 1rem 0;
-        }
-
-        .add {
-            cursor: pointer;
-            text-decoration: underline;
-            color: cornflowerblue;
-        }
-
-        code {
-            background-color: gold;
-            padding: 0.5rem;
-            line-height: 1.5rem;
-        }
-
-        #description,
-        #mystyles {
-            width: 80%;
-            padding: 5px;
-        }
-
-        #composer {
-            margin-bottom: 100px;
-        }
-    </style>
+    <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
 </head>
 
 <body>
@@ -55,7 +29,7 @@
         chaos: '',
         quality: '',
         add(text){
-            this.mystyles = this.mystyles + text + ':: ';
+            this.mystyles = this.mystyles + text + '::1 ';
         },
         updateVersion(){
             console.log('Changed version');
