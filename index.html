@@ -12,7 +12,7 @@
             margin: 1rem 0 1rem 0;
         }
 
-        li {
+        .add {
             cursor: pointer;
             text-decoration: underline;
             color: cornflowerblue;
@@ -38,7 +38,7 @@
 
 <body>
 
-    <h1>Midjourney</h1>
+    <h1>Midjourney prompt builder</h1>
 
     <div id="composer" x-data="{ 
         url: '',
@@ -99,17 +99,36 @@
             <input type="text" x-model="no" id="no" spellcheck="true" />
         </div>
 
-        <h2>2. Style</h2>
+        <h2>2. Looks</h2>
 
-        <ul>
+        <h3>Styles</h3>
+
+        <ul class="add">
             <li x-on:click="add($el.innerText)">looney tunes style</li>
             <li x-on:click="add($el.innerText)">cartoon</li>
             <li x-on:click="add($el.innerText); styletype='photo'">high quality photo</li>
             <li x-on:click="add($el.innerText)">8K</li>
         </ul>
 
-        <p>Types of Shots: https://www.careersinfilm.com/types-of-shots-in-film/</p>
-        <ul>
+        <div x-show="styletype=='photo'">
+            <h4>Photo specific</h4>
+            <ul class="add">
+                <li x-on:click="add($el.innerText)">35mm lens</li>
+                <li x-on:click="add($el.innerText)">50mm lens</li>
+                <li x-on:click="add($el.innerText)">100mm lens</li>
+            </ul>
+        </div>
+
+        <h3>Types of Shots
+            <sup>
+                <small>
+                    <a href="https://www.careersinfilm.com/types-of-shots-in-film/" rel="noreferrer"
+                        target="_blank">Reference</a>
+                </small>
+            </sup>
+        </h3>
+        <p></p>
+        <ul class="add">
             <li x-on:click="add($el.innerText)">Extreme wide shot</li>
             <li x-on:click="add($el.innerText)">Wide shot</li>
             <li x-on:click="add($el.innerText)">Full shot</li>
@@ -119,11 +138,6 @@
             <li x-on:click="add($el.innerText)">Extreme close-up Shot</li>
         </ul>
 
-        <ul x-show="styletype=='photo'">
-            <li x-on:click="add($el.innerText)">35mm lens</li>
-            <li x-on:click="add($el.innerText)">50mm lens</li>
-            <li x-on:click="add($el.innerText)">100mm lens</li>
-        </ul>
 
         <h2>3. Settings</h2>
 
@@ -185,6 +199,13 @@
                 <option value="5">5</option>
             </select>
         </div>
+
+        <h2>4. Check your prompt</h2>
+
+        <ol>
+            <li>Balance the weights</li>
+            <li>Consider adding a seed for consistency</li>
+        </ol>
 
     </div>
 
