@@ -86,6 +86,7 @@
             <h4>Cartoon specific</h4>
             <ul class="add">
                 <li x-on:click="add($el.innerText, 2)">looney tunes style</li>
+                <li x-on:click="add($el.innerText, 2)">marvel style</li>
             </ul>
         </div>
         <div x-show="styletype=='photo'">
@@ -131,6 +132,13 @@
             <li x-on:click="add($el.innerText)">close-up shot</li>
             <li x-on:click="add($el.innerText)">medium close-up shot</li>
             <li x-on:click="add($el.innerText)">extreme close-up Shot</li>
+        </ul>
+
+        <ul class="add">
+            <li x-on:click="add($el.innerText)">wide angle shot</li>
+            <li x-on:click="add($el.innerText)">full body image</li>
+            <li x-on:click="add($el.innerText)">aerial view</li>
+            <li x-on:click="add($el.innerText)">panoramic view</li>
         </ul>
 
 
