@@ -22,6 +22,7 @@
         iw: '',
         no:'', 
         version: '', 
+        omodels: '', 
         style: '', 
         aspectratio:'',
         stylize: '',
@@ -46,6 +47,7 @@
 <span x-show="no">--no <span x-text="no"></span></span>
 <span x-show="version">--v <span x-text="version"></span></span>
 <span x-show="style">--style <span x-text="style"></span></span>
+<span x-show="omodels"><span x-text="omodels"></span></span>
 <span x-show="aspectratio">--ar <span x-text="aspectratio"></span></span>
 <span x-show="stylize">--s <span x-text="stylize"></span></span>
 <span x-show="seed">--seed <span x-text="seed"></span></span>
@@ -160,6 +162,19 @@
                 <option value=""></option>
                 <option value="4a">4a</option>
                 <option value="4b">4b</option>
+                <option value="4b">4c</option>
+            </select>
+        </div>
+        <div>
+            <label for="omodels">Other models:</label>
+            <select x-model="omodels" id="omodels">
+                <option value=""></option>
+                <option value="--niji">--niji</option>
+                <option value="--test">--test</option>
+                <option value="--testp">--testp</option>
+                <option value="--test --creative">--test --creative</option>
+                <option value="--testp --creative">--testp --creative</option>
+
             </select>
         </div>
         <div>
