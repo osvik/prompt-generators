@@ -165,15 +165,15 @@
                 <option value="4b">4c</option>
             </select>
         </div>
-        <div>
+        <div x-show="version === ''">
             <label for="omodels">Other models:</label>
             <select x-model="omodels" id="omodels">
                 <option value=""></option>
-                <option value="--niji">--niji</option>
-                <option value="--test">--test</option>
-                <option value="--testp">--testp</option>
-                <option value="--test --creative">--test --creative</option>
-                <option value="--testp --creative">--testp --creative</option>
+                <option value="--niji">niji</option>
+                <option value="--test">test</option>
+                <option value="--testp">testp</option>
+                <option value="--test --creative">test creative</option>
+                <option value="--testp --creative">testp creative</option>
 
             </select>
         </div>
