@@ -146,7 +146,7 @@
 
         <h2>3. Settings</h2>
 
-        <div>
+        <div x-show="omodels === ''">
             <label for="version">Version:</label>
             <select x-model="version" id="version" x-on:change="updateVersion()">
                 <option value=""></option>
