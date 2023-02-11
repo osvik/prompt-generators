@@ -81,8 +81,16 @@
 
         <ul class="add">
             <li x-on:click="add($el.innerText, 2); styletype='cartoon'">cartoon</li>
+            <li x-on:click="styletype='movies'">movies</li>
             <li x-on:click="add($el.innerText, 2); styletype='photo'">high quality photo</li>
         </ul>
+
+        <div x-show="styletype=='movies'">
+            <h4>Movies specific</h4>
+            <ul class="add">
+                <li x-on:click="add($el.innerText, 2);">Lord of The Rings style</li>
+            </ul>
+        </div>
 
         <div x-show="styletype=='cartoon'">
             <h4>Cartoon specific</h4>
